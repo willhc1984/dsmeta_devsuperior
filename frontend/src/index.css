@@ -7,16 +7,17 @@
     padding: 0;
 }
 
-header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 220px;
-    background: linear-gradient(180deg, #102347 0%, #181818 100%);
-}
-
 body, html{
     background-color: #000;
     color: #fff;
+}
+
+#sales{
+    padding: 40px 10px;
+}
+
+.dsmeta-container{
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 }
