@@ -16,19 +16,19 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-	
+
 	@Bean
-	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
-		
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+
 		http.headers().frameOptions().disable();
 		http.cors().and().csrf().disable();
 		http.sessionManagement().sessionCreationPolicy((SessionCreationPolicy.STATELESS));
 		http.authorizeHttpRequests((auth -> auth.anyRequest().permitAll()));
 		return http.build();
 	}
-	
+
 	@Bean
-	CorsConfigurationSource corsConfigurationSouce(){
+	CorsConfigurationSource corsConfigurationSouce() {
 		CorsConfiguration configuration = new CorsConfiguration().applyPermitDefaultValues();
 		configuration.setAllowedMethods(Arrays.asList("POST", "GET", "PUT", "DELETE", "OPTIONS"));
 		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
